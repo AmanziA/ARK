@@ -1,0 +1,394 @@
+@font-face {
+  font-family: "Graphik Regular";
+  src: url("assets/Graphik-Regular.ttf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Graphik Semibold";
+  src: url("assets/Graphik-Semibold.ttf") format("opentype");
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  cursor: url("assets/heart.png"), auto;
+  font-family: "Graphik Regular";
+  color: #2d2d2d;
+  line-height: 1.6;
+}
+
+::selection {
+  color: #00baba;
+  background-color: #e5f8f8;
+}
+
+body:active {
+  cursor: auto;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+nav {
+  color: transparent;
+  height: 90px;
+  width: calc(100% - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.logo {
+  width: 170px;
+  height: 50px;
+  background-image: url("assets/logo.png");
+  cursor: pointer;
+}
+
+.container {
+  height: 90px;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mode {
+  width: 50px;
+  height: 50px;
+  background-image: url("assets/moon.png");
+  background-size: cover;
+  margin-right: 20px;
+  margin-left: 20px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.mode::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 2;
+  left: 0;
+  opacity: 0.1;
+  z-index: -1;
+  transform: translate(-101%, 0);
+  border-bottom: 50px solid #00baba;
+  transition: transform 0.2s ease-in-out 0s;
+}
+
+.mode:hover::after {
+  transform: translate(0, 0);
+}
+
+button {
+  background-color: #00baba;
+  border: none;
+  color: white;
+  font-family: "Graphik Semibold", sans-serif;
+  font-size: 18px;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button-bar {
+  height: 90px;
+  width: 90px;
+}
+
+button:hover {
+  background-color: #138481;
+  transition: 0.2s ease-in-out;
+}
+
+.mode:hover {
+  background-color: transparent;
+}
+
+header {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #e8f8f8;
+}
+
+.header__background {
+  background-image: url("assets/header-background.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: inherit;
+  background-position-x: center;
+  background-position-y: bottom;
+}
+
+.top-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Graphik Semibold";
+  font-size: 2.6rem;
+  margin: 60px 0px 10px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 0 34% 2%;
+  text-align: center;
+}
+
+.share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.span-share {
+  font-family: "Graphik Semibold";
+}
+
+span {
+  height: fit-content;
+  margin: 0px 20px;
+  font-size: 20px;
+}
+
+.soc-net {
+  background-color: #e5f8f8;
+  height: 34px;
+  width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 6px;
+  cursor: pointer;
+  filter: grayscale(1);
+}
+
+.icon-social {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 14px;
+}
+
+.instagram {
+  background-image: url("assets/instagram.png");
+}
+
+.twitter {
+  background-image: url("assets/twitter.png");
+  background-position-y: center;
+}
+
+.facebook {
+  background-image: url("assets/facebook.png");
+  background-position-x: 4px;
+}
+
+.soc-net:hover {
+  filter: none;
+  transition: 0.2s ease-in-out;
+}
+
+.start,
+.ideas,
+.fund,
+.join {
+  margin: 4% 0%;
+  height: 40vh;
+}
+
+.start-text,
+.fund-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  float: left;
+  height: inherit;
+}
+
+h2 {
+  width: fit-content;
+  margin-left: 50%;
+  font-family: "Graphik Semibold";
+}
+
+.start-p {
+  margin: 0;
+  margin-left: 50%;
+  text-align: left;
+}
+
+.start-img {
+  background-image: url("assets/image-charity.png");
+  width: 50%;
+  float: right;
+  height: inherit;
+  background-size: unset;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+.link {
+  color: #00baba;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: #e5f8f8;
+  transition: 0.2s ease-in-out;
+}
+
+.ideas {
+  background-image: url("assets/contacts.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: inherit;
+}
+
+.ideas-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10%;
+  height: fit-content;
+}
+
+.ideas-h2,
+.join-h2 {
+  margin-left: 0;
+}
+
+.ideas-p {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+input {
+  text-decoration: underline;
+  color: #00baba;
+  outline: none;
+  border: none;
+  font-size: 1.6em;
+  font-family: inherit;
+  line-height: inherit;
+  text-align: center;
+  margin: 0.8% 0 0.2%;
+}
+
+input:hover {
+  background-color: #e5f8f8;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  background-color: #e5f8f8;
+  transition: 0.2s ease-in-out;
+}
+
+::placeholder {
+  color: #00baba;
+}
+
+.ideas-span {
+  font-size: 0.8em;
+}
+
+.ideas-button,
+.join-button {
+  padding: 0.8% 2.2%;
+  margin: 2% 0;
+}
+
+.fund-text {
+  float: right;
+}
+
+.fund-h2 {
+  margin-right: 50%;
+  margin-left: 0;
+  align-self: flex-end;
+}
+
+.fund-p {
+  margin: 0px;
+  margin-right: 50%;
+  text-align: right;
+}
+
+.fund-img {
+  background-image: url("assets/image-handshake.png");
+  width: 50%;
+  float: left;
+  height: inherit;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.join {
+  background-color: #e5f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.join-p {
+  font-size: 1.6em;
+  margin: 0 34%;
+}
+
+.join-input {
+  font-size: 1em;
+  background-color: transparent;
+  line-height: initial;
+  margin: 0;
+}
+
+.name {
+  width: 142px;
+}
+
+.email {
+  width: 194px;
+}
+
+.number {
+  width: 186px;
+}
+
+footer {
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.copyright-right,
+.copyright-left {
+  font-size: x-small;
+}
