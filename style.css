@@ -262,18 +262,36 @@ h2 {
 }
 
 .ideas {
-  background-image: url("assets/contacts.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: inherit;
+width: calc(100vw - 20px);
+margin: auto;
+position: relative;
+}
+
+.ideas img {
+height: 100%;
+width: 100%;
+object-fit: contain;
+position: absolute;
+animation: floatAnimation 6s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate(0, 40px) rotate(0.02deg);
+  }
 }
 
 .ideas-text {
+	position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 10%;
-  height: fit-content;
+	width: 100%;
 }
 
 .ideas-h2,
