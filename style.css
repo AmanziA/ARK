@@ -15,7 +15,7 @@ body {
   cursor: url("assets/heart.png"), auto;
   font-family: "Graphik Regular";
   color: #2d2d2d;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 ::selection {
@@ -50,8 +50,12 @@ nav {
 .logo {
   width: 170px;
   height: 50px;
-  background-image: url("assets/logo.png");
   cursor: pointer;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
 }
 
 .container {
@@ -120,28 +124,25 @@ button:hover {
   background-color: transparent;
 }
 
-header {
+.header__background {
   height: 60vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
   background-color: #e8f8f8;
 }
 
-.header__background {
-  background-image: url("assets/header-background.png");
-  background-repeat: no-repeat;
+.header__background img {
+  height: 100%;
   width: 100%;
-  height: inherit;
-  background-position-x: center;
-  background-position-y: bottom;
+  object-fit: contain;
+  object-position: bottom;
 }
 
 .top-txt {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
+  margin: 0 auto;
+  width: 46%;
 }
 
 h1 {
@@ -153,7 +154,6 @@ h1 {
 
 p {
   font-size: 1.2em;
-  margin: 0 34% 2%;
   text-align: center;
 }
 
@@ -212,43 +212,45 @@ span {
 }
 
 .start,
-.ideas,
 .fund,
 .join {
-  margin: 4% 0%;
+  width: 68%;
   height: 40vh;
+  display: flex;
+  margin: auto;
+  padding: 60px 0;
+}
+
+h2 {
+  font-family: "Graphik Semibold";
+  margin: 0;
+  font-size: 1.6em;
 }
 
 .start-text,
 .fund-text {
+  height: inherit;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  float: left;
-  height: inherit;
-}
-
-h2 {
-  width: fit-content;
-  margin-left: 50%;
-  font-family: "Graphik Semibold";
 }
 
 .start-p {
-  margin: 0;
-  margin-left: 50%;
   text-align: left;
 }
 
-.start-img {
-  background-image: url("assets/image-charity.png");
+.start-img,
+.fund-img {
   width: 50%;
-  float: right;
   height: inherit;
-  background-size: unset;
-  background-repeat: no-repeat;
-  background-position: left;
+}
+
+.start-img img,
+.fund-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .link {
@@ -262,17 +264,18 @@ h2 {
 }
 
 .ideas {
-width: calc(100vw - 20px);
-margin: auto;
-position: relative;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  height: 40vh;
 }
 
 .ideas img {
-height: 100%;
-width: 100%;
-object-fit: contain;
-position: absolute;
-animation: floatAnimation 6s ease-in-out infinite;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+  animation: floatAnimation 6s ease-in-out infinite;
 }
 
 @keyframes floatAnimation {
@@ -287,11 +290,12 @@ animation: floatAnimation 6s ease-in-out infinite;
 }
 
 .ideas-text {
-	position: absolute;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-	width: 100%;
+  width: 34%;
+  margin: 0 34% auto;
 }
 
 .ideas-h2,
@@ -336,47 +340,36 @@ input:focus {
 
 .ideas-button,
 .join-button {
-  padding: 0.8% 2.2%;
+  padding: 14px 32px;
   margin: 2% 0;
-}
-
-.fund-text {
-  float: right;
+  font-size: 14px;
 }
 
 .fund-h2 {
-  margin-right: 50%;
-  margin-left: 0;
-  align-self: flex-end;
+  margin-left: auto;
 }
 
 .fund-p {
-  margin: 0px;
-  margin-right: 50%;
   text-align: right;
 }
 
-.fund-img {
-  background-image: url("assets/image-handshake.png");
-  width: 50%;
-  float: left;
-  height: inherit;
-  background-repeat: no-repeat;
-  background-position: right;
-}
-
-.join {
+.join,
+.join__wrapper {
   background-color: #e8f8f8;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0;
+  width: 100%;
+}
+
+.join__wrapper {
+  width: 42%;
+  margin: 0 auto;
+  display: flex;
 }
 
 .join-p {
   font-size: 1.6em;
-  margin: 0 34%;
 }
 
 .join-input {
@@ -398,16 +391,60 @@ input:focus {
   width: 186px;
 }
 
-footer {
+.footer__wrapper {
   height: 6vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 68%;
+  margin: auto;
 }
 
 .copyright-right,
 .copyright-left {
   font-size: x-small;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .top-txt {
+    width: 60%;
+  }
+
+  .span-share {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .start,
+  .fund {
+    width: 82%;
+    height: 20vh;
+  }
+
+  .ideas,
+  .join {
+    height: 20vh;
+  }
+
+  .ideas {
+    height: 20vh;
+    margin: 6vh 0 10vh;
+  }
+
+  .ideas-text {
+    width: 40%;
+    margin: 0 32% auto;
+  }
 }
 
